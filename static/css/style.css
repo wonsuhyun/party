@@ -2,9 +2,11 @@
     max-width: 1200px;
     margin: 0 auto;
 }
+
 .container {
     padding-top: 50px;
 }
+
 .header {
     position: fixed;
     top: 0;
