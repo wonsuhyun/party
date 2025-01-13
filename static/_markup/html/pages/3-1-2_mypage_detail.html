@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    @@include('common/head.html')
+</head>
+
+<body>
+<div id="gnb"></div>
+@@include('common/lnb.html')
+
+<div class="wrap">
+    <div id="container" class="ct_mypage_detail">
+        @@include('common/header.html', { tab3: 'active' })
+        @@include('components/mypage_tab.html', { tab1: 'active' })
+
+        <div class="common_wrap bg f__item">
+            <a href="/" class="btn_prev">이전</a>
+
+            <div class="apply_info">
+                <!-- TODO label_status 상태값 정의
+                    label_status : 가입
+                    label_status + ready : 결제전, 입금대기
+                    label_status + end : 환불, 만료
+                    label_status + refund : 환불접수
+                -->
+                <span class="label_status">가입</span>
+
+                <!-- TODO 결제전, 입금대기: <button.btn_cancel> 노출 -->
+                <button type="button" class="btn_cancel">신청취소</button>
+
+                <div class="my_info">
+                    <div class="title">
+                        세인트헬레나 어센션 트리스탄다쿠냐
+                        <!-- TODO 가입: 국가변경 버튼 노출 -->
+                        <button type="button" class="t__underline c__point">국가변경</button>
+                    </div>
+
+                    <!-- TODO 가입: 기간연장 버튼 노출 -->
+                    <p>22.01.20 오전 10시부터<br>22.01.24 오후 10시까지 (4일간)</p>
+
+                    <!-- TODO 가입: 2인 이상 가입이면서 기간 서로 다를 경우 노출 -->
+                    <p class="period"><button type="button" class="btn_period">22.01.20 오전 10시부터<br>22.01.24 오후 10시까지 (4일간)</button></p>
+
+                    <!-- TODO 1인 가입일 경우 인원수 미노출 -->
+                    <p>총 3명<button type="button" class="mi_btn white sm">가입자명단</button></p>
+
+                    <!-- TODO 2인 가입일 경우 보장확인 버튼 미노출 -->
+                    <p><span class="origin"><em>2,000,000</em>원</span> 1,131,190원<button type="button" class="mi_btn white sm">보장확인</button></p>
+
+                    <!-- TODO 환불: 환불접수 노출 -->
+                    <p>2022.01.11 환불접수</p>
+                </div>
+
+                <ul>
+                    <li>
+                        <!-- TODO 2인 가입일 경우 <em> 노출 -->
+                        <h4 class="title c__point"><em>대표</em>가입자</h4>
+                        <p>
+                            홍길동<br>
+                            901212-1******<br>
+                            010-1234-5678<br>
+                            mibank@naver.com<br>
+                            <!-- TODO 환불, 환불접수: 메일변경 미노출 -->
+                            <button type="button" class="t__underline c__point">메일변경</button>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- TODO 결제 전 <div.premium> 노출 -->
+            <!--@@include('components/premium.html')-->
+
+            <!-- TODO 입금대기 상태인 경우 <div.account_info_wrap>에서 el_hidden 클래스 제거 후 노출 -->
+            <!--@@include('components/account_info.html')-->
+
+            <!-- TODO 결제전, 가입, 만료 상태인 경우 <div.btn_wrap> 노출 -->
+            <div class="btn_wrap row">
+                <!-- TODO 결제전: 결제하기 버튼 노출 -->
+                <!--<button type="button" class="mi_btn color">결제하기</button>-->
+                <!-- TODO 가입, 만료: 가입증명서 발행 버튼 노출 -->
+                <button type="button" class="mi_btn color type2">영문 가입증명서</button>
+                <button type="button" class="mi_btn white">한글 가입증명서</button>
+            </div>
+        </div>
+
+        <!-- TODO 결제 전 <div.common_wrap.el_hidden> 노출 -->
+        <div class="common_wrap">
+            @@include('components/pay_type.html')
+        </div>
+    </div>
+</div>
+
+<div id="footer"></div>
+
+@@include('common/js.html')
+</body>
+</html>
+</form>

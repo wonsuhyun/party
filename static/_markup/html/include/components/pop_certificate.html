@@ -1,0 +1,100 @@
+<div class="check_group tab" data-name="lang">
+    <label class="mi_check checked">
+        <input type="radio" name="lang" value="kor" checked>
+        <span class="text">한글</span>
+    </label>
+    <label class="mi_check">
+        <input type="radio" name="lang" value="eng">
+        <span class="text">영문</span>
+    </label>
+</div>
+
+<div class="check_group cert_type" data-name="getCertType">
+    <label class="mi_check checked">
+        <input type="radio" name="getCertType" checked>
+        <i class="ico_circle"></i><span class="text">이메일</span>
+    </label>
+    <label class="mi_check">
+        <input type="radio" name="getCertType">
+        <i class="ico_circle"></i><span class="text">다운로드</span>
+    </label>
+    <label class="mi_check">
+        <input type="radio" name="getCertType">
+        <i class="ico_circle"></i><span class="text">바로보기</span>
+    </label>
+</div>
+
+<div class="email_wrap">
+    <div class="input_group">
+        <div class="input_box">
+            <div class="f__item">
+                <input type="text" class="mi_input " id="emailId" data-label="이메일">
+            </div>
+            <span class="input_connect"> @ </span>
+            <div class="f__item">
+                <input type="text" class="mi_input ma_b  el_hidden" id="emailDomain" data-label="이메일">
+                <select class="mi_input select email2_changer" id="emailSelect">
+                    <option value="naver.com">naver.com</option>
+                    <option value="daum.net">daum.net</option>
+                    <option value="hanmail.net">hanmail.net</option>
+                    <option value="gmail.com">gmail.com</option>
+                    <option value="nate.com">nate.com</option>
+                    <option th:if="${session.suffixUrl == 'xyz'}" value="mibank.me">mibank.me</option>
+                    <option value="mibank">직접입력</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TODO 1인 가입일 경우 <div.name_space>에 alone 클래스 추가 -->
+<div class="name_space">
+    <p class="pop_noti t__center"><strong class="c__point">여권상의 영문명을 기재</strong>해주세요<br>예시) 홍길동 : HONG GILDONG</p>
+
+    <label class="mi_check all">
+        <input type="checkbox">
+        <i class="ico_circle"></i><span class="text t__underline">전체선택</span>
+    </label>
+
+    <div class="input_group">
+        <label class="mi_check">
+            <input type="checkbox" name="checkbox" checked>
+            <i class="ico_circle"></i>
+            <span class="text">서민지</span>
+        </label>
+
+        <input class="mi_input" type="text" placeholder="영문이름 입력" autocapitalize="characters">
+    </div>
+
+    <div class="input_group">
+        <label class="mi_check">
+            <input type="checkbox" name="checkbox">
+            <i class="ico_circle"></i>
+            <span class="text">서민지서민지서민지</span>
+        </label>
+
+        <input class="mi_input" type="text" placeholder="영문이름 입력" autocapitalize="characters">
+    </div>
+
+    <div class="input_group">
+        <label class="mi_check checked">
+            <input type="checkbox" name="checkbox">
+            <i class="ico_circle"></i>
+            <span class="text">btnCertificateEn</span>
+        </label>
+
+        <input class="mi_input" type="text" placeholder="영문이름 입력" value="btnCertificateEn btnCertificateEn btnCertificateEn btnCertificateEn" autocapitalize="characters">
+    </div>
+
+    @@for (var i = 3; i <= 20; i++) {
+    <div class="input_group">
+        <label class="mi_check checked">
+            <input type="checkbox" name="checkbox">
+            <i class="ico_circle"></i>
+            <span class="text">서민지</span>
+        </label>
+
+        <input class="mi_input" type="text" placeholder="영문이름 입력" autocapitalize="characters">
+    </div>
+    }
+</div>

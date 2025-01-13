@@ -1,0 +1,48 @@
+<script src="https://common.mibank.xyz/build/js/chunk-vendors.js"></script>
+<script src="https://common.mibank.xyz/build/js/gnb_ins.js"></script>
+<script src="https://common.mibank.xyz/build/js/footer_ins.js"></script>
+
+<script src="/js/common/mi.common.pop.js"></script>
+<script src="/js/common.js"></script>
+
+<!-- markup에서만 사용 -->
+<script>
+// sessionStorage.setItem('mi_device', 'app');
+sessionStorage.removeItem('mi_device');
+
+$(function () {
+    if (!isMobile) {
+        $('body').addClass('desktop');
+        $('.lnb_wrap').remove()
+    } else {
+        $('body').addClass('mobile');
+        $('.header-dev').add('#footer').remove();
+
+        if (isApp) {
+            $('body').addClass('app');
+            $('.lnb_wrap').remove();
+
+            var miAppData = {
+                headType: '', // style  - 사용안함
+                headColor: '5c8cca', // 네이티브 네비게이션 컬러
+                menuColor: 'ffffff', // 햄버거 헤더 컬러 - 사용안함
+                subMenuColor: '', // 서브메뉴 컬러 - 사용안함
+                miTitle: '해외여행자보험', // 네이티브 네비게이션 타이틀
+                miTitleType: 'text', // image or text
+                miTitleCode: '', // 서비스 코드
+                pathCode1: '', // 현재위치 depth1 - code 임시사용
+                pathCode2: '', // 현재위치 depth2 - 사용안함
+                menuAdd: true, // 햄버거 메뉴 노출 여부 - 사용안함
+                tabMenus: []
+            };
+
+            if (typeof isIntro !== 'undefined') { // index
+                miAppData.miTitle = '';
+                miAppData.headColor = 'ffffff';
+            }
+
+            miAppProtocol.call('miAppConnectCall', miAppData);
+        }
+    }
+})
+</script>

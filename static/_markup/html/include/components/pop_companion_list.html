@@ -1,0 +1,45 @@
+<table class="mi_table">
+    <caption>가입자명단</caption>
+
+    <thead>
+    <tr>
+        <th>NO</th>
+        <th>이름</th>
+        <th>주민번호</th>
+        <th>보험료</th>
+        <th>보장내용</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>대표</td>
+        <td class="t__left">홍길동</td>
+        <td>801212-1212121</td>
+        <td><span class="t__right">990,990</span></td>
+        <td>
+            <button type="button" class="mi_btn white sm">보기</button>
+        </td>
+    </tr>
+
+    <tr class="refund">
+        <td>1</td>
+        <td class="t__left">홍길동</td>
+        <td>801212-1212121</td>
+        <td><span class="t__right">99,990</span></td>
+        <td>가입취소</td>
+    </tr>
+
+    @@for (var i = 2; i <= 20; i++) {
+    <tr>
+        <td>`+ i +`</td>
+        <td class="t__left">홍길...</td>
+        <td>801212-1234567</td>
+        <td><span class="t__right">`+ (i % 999 * 6) +`,568</span></td>
+        <td>
+            <button type="button" class="mi_btn white sm">보기</button>
+        </td>
+    </tr>
+    }
+    </tbody>
+</table>

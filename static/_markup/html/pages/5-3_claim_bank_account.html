@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    @@include('common/head.html')
+</head>
+
+<body>
+<div id="gnb"></div>
+@@include('common/lnb.html')
+
+<div class="wrap">
+    <div id="container" class="ct_claim_bank_account">
+        @@include('common/header_title.html')
+        <div class="contents_step  with_title no_tab">
+            <a href="/" class="btn_prev common_wrap">이전</a>보상간편청구
+        </div>
+        @@include('common/contents_step_claim.html',{ step: 'step2' })
+
+        <div id="contents">
+            <div class="common_wrap">
+                <div>
+                    <h4 class="part_title"><strong>보험금 수령계좌 정보 입력</strong></h4>
+                    <div class="input_group">
+                        <label class="input_label">은행</label>
+                        <div class="input_box">
+                            <select class="mi_input select">
+                                <option disabled hidden selected>선택</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input_group">
+                        <label class="input_label">계좌번호</label>
+                        <div class="input_box">
+                            <input type="text" class="mi_input" placeholder="‘-’ 없이 입력"/>
+                            <button class="mi_btn  color w__80">확인</button>
+                        </div>
+
+                    </div>
+                    <div class="input_group">
+                        <label class="input_label">은행</label>
+                        <div class="input_box">
+                            <input type="text" class="mi_input"/>
+                        </div>
+                    </div>
+
+                    <div class="holder_noti el_hidden">
+                        <div class="box">
+                            <p>해당 계좌의 예금주와 피보험자가 다릅니다</p>
+                            <ul>
+                                <li>예금주의 주민등록번호를 입력해주세요</li>
+                                <li>추후 보상담당자가 위임장을 요청할 수 있습니다</li>
+                            </ul>
+                            <div class="input_group full">
+                                <label class="input_label">예금주</label>
+                                <div class="input_box">
+                                    <input type="text" class="mi_input" />
+                                    <span class="input_connect">-</span>
+                                    <input type="text" class="mi_input" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="common_wrap">
+                <div class="btn_wrap dual">
+                    <button class="mi_btn white small">임시저장</button>
+                    <button class="mi_btn color big">다음</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer"></div>
+
+<script>
+    setPosition($('.drop_select_wrap'));
+
+    $('.drop_select').on('click', function(){
+        if (!$(this).hasClass('active')) {
+            $(this).addClass('active');
+            $(this).siblings('.drop_down_conts').slideDown(200);
+        }
+    })
+
+    $('.drop_down_conts input[type=checkbox]').on('change', function(){
+        var wrap = $(this).parents('.drop_select_wrap')
+        var ipSelect = wrap.find('.drop_select');
+
+        if ($(this).prop('checked')) {
+            var checkedItem = $('<span class="checked_item" data-name="'+$(this).val()+'">'+$(this).siblings('.text').text()+'</span>');
+            var button = $('<button class="close"></button>')
+
+            checkedItem.append(button);
+            ipSelect.append(checkedItem);
+
+            button.on('click',function(e){
+                e.stopPropagation();
+                e.preventDefault();
+
+                var wrap = $(this).parents('.drop_select_wrap');
+                var parent = $(this).parents('.checked_item');
+
+                wrap.find('input[value = '+ parent.data('name')+']').prop('checked', false);
+                parent.remove();
+
+                toggleDefault(wrap)
+                setPosition(wrap);
+            });
+        }
+        else ipSelect.find('[data-name = '+$(this).val()+']').remove();
+
+        toggleDefault(wrap);
+        setPosition(wrap);
+
+
+
+
+    })
+
+    $('.select_done').on('click', function(){
+        var ipSelect = $(this).parents('.drop_select_wrap').find('.drop_select');
+        ipSelect.removeClass('active');
+        ipSelect.siblings('.drop_down_conts').stop().slideUp(200);
+    });
+
+
+
+    function toggleDefault(dropWrap){
+        var ipSelect = dropWrap.find('.drop_select');
+        if (!ipSelect.find('.checked_item').length) ipSelect.find('.default').removeClass('el_hidden');
+        else ipSelect.find('.default').addClass('el_hidden');
+    }
+
+    function setPosition(dropWrap){
+        var ipSelect = dropWrap.find('.drop_select');
+        var selectConts = dropWrap.find('.drop_down_conts');
+        selectConts.css({top: (ipSelect.outerHeight() + 4) + 'px'})
+    }
+</script>
+
+@@include('common/js.html')
+</body>
+</html>

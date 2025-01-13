@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    @@include('common/head.html')
+    <link rel="stylesheet" href="https://common.mibank.xyz/js/lib/swiper-7.0.2/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://common.mibank.xyz/css/mi.banners.css">
+</head>
+
+<body>
+<div id="gnb"></div>
+@@include('common/lnb.html')
+
+<div class="wrap">
+    <div id="container" class="ct_mypage_login mi_banner_wrap modify">
+        @@include('common/header.html', { tab3: 'active' })
+
+        <div id="contents" class="common_wrap">
+
+            <div class="form_cs">
+                <p class="part_q c__dark">본인이 대표가입자로서 직접 가입하셨나요?</p>
+                <div class="input_group check_group confirm row">
+                    <label class="mi_check">
+                        <input type="radio" name="isRep" value="Y"/>
+                        <i class="ico_check"></i>
+                        <span class="text">예, 대표가입자 입니다</span>
+                    </label>
+                    <label class="mi_check">
+                        <input type="radio" name="isRep" value="Y"/>
+                        <i class="ico_check"></i>
+                        <span class="text">아니요, 동반가입자 입니다</span>
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="origin">
+                <p class="part_q c__dark">본인 확인을 위해 아래 정보를 입력해주세요</p>
+                <div class="input_group full">
+                    <label class="input_label">생년월일 <span class="t__bold c__point">6자리</span></label>
+                    <div class="input_box">
+                        <input type="tel" class="mi_input" maxlength="6">
+                    </div>
+                </div>
+
+                <div class="input_group full phone">
+                    <label class="input_label">휴대폰번호</label>
+                    <div class="input_box">
+                        <input type="tel" class="mi_input" placeholder="‘-’ 없이 입력" maxlength="13">
+                        <button type="button" class="mi_btn white w__120">인증번호 받기</button>
+                    </div>
+                </div>
+
+                <div class="input_group full email">
+                    <label class="input_label">이메일 주소</label>
+                    <div class="input_box">
+                        <div class="f__item">
+                            <input type="text" class="mi_input email1">
+                        </div>
+                        <span class="input_connect">@</span>
+                        <div class="f__item">
+                            <input type="text" class="mi_input ma_b el_hidden email2">
+                            <select class="mi_input select email2_changer">
+                                <option value="" selected="" disabled="" hidden="">선택</option>
+                                <option value="naver.com">naver.com</option>
+                                <option value="daum.net">daum.net</option>
+                                <option value="hanmail.net">hanmail.net</option>
+                                <option value="gmail.com">gmail.com</option>
+                                <option value="nate.com">nate.com</option>
+                                <option value="mibank.me">mibank.me</option>
+                                <option value="mibank">직접입력</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="btn_wrap">
+                        <button class="mi_btn white">인증번호 받기</button>
+                    </div>
+                </div>
+
+                <div class="input_group full">
+                    <label class="input_label">인증번호</label>
+                    <div class="input_box">
+                        <input type="tel" class="mi_input" placeholder="4자리 입력" maxlength="4">
+                        <button type="button" class="mi_btn color w__120">확인</button>
+                    </div>
+                </div>
+
+                <div class="modify">
+                    <button class="btn_confirm_modify">이메일로 인증하기</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="el_hidden id_area">
+            @@include('components/id.html')
+        </div>
+
+
+        <div id="miBanners"></div>
+    </div>
+</div>
+
+<div id="footer"></div>
+
+<script src="https://common.mibank.xyz/js/lib/swiper-7.0.2/swiper-bundle.min.js"></script>
+<script src="https://common.mibank.xyz/js/mi.banners.js"></script>
+@@include('common/js.html')
+
+<script>
+    $(function () {
+        miBanners('#miBanners', ['travel']);
+    });
+</script>
+</body>
+</html>

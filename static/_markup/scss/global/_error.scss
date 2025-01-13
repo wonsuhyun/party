@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+.error_msg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    padding-top: 82px;
+    background: url($img-path-common + 'bg_error.png') no-repeat center top / 64px auto;
+    text-align: center;
+    transform: translate(0, -65%);
+
+    p {
+        @include set-font(14px, #555);
+
+        & + p {
+            margin-top: 15px;
+        }
+    }
+
+    .sub {
+        @include set-font(12px, #555);
+    }
+}

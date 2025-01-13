@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+@mixin clearfix {
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+@mixin ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin set-font($size, $color) {
+    font-size: $size;
+    color: $color;
+}
+
+@mixin text-indent($size) {
+    padding-left: -$size;
+    text-indent: $size;
+}
+
+@mixin text-bg-line($h, $c) {
+    position: relative;
+    display: inline;
+    z-index: 0;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: $h;
+        background: $c;
+        z-index: -1;
+    }
+}
+
+@mixin btn-height($h) {
+    height: $h;
+    line-height: $h - 2;
+}
+
+@mixin arrow($size, $width, $color, $deg) {
+    display: inline-block;
+    width: $size;
+    height: $size;
+    border-right: $width solid $color;
+    border-bottom: $width solid $color;
+    transform: rotate($deg)
+}
+
+@mixin arrow-down($size, $width, $color) {
+    @include arrow($size, $width, $color, 45deg);
+}
+
+@mixin arrow-up($size, $width, $color) {
+    @include arrow($size, $width, $color, 225deg);
+}
+
+@mixin arrow-right($size, $width, $color) {
+    @include arrow($size, $width, $color, -45deg);
+}
+
+@mixin arrow-left($size, $width, $color) {
+    @include arrow($size, $width, $color, 135deg);
+}
+
+@mixin add-ico($name, $position, $w, $margin: 8px, $withText: true) {
+    &:#{$position} {
+        content: '';
+        display: inline-block;
+        width: $w;
+        height: 100%;
+        background: url($img-path + 'ico_#{$name}.png') no-repeat left center/$w auto;
+        vertical-align: top;
+
+        @if $withText {
+            @if $position == 'before' {
+                margin-right: $margin;
+            } @else {
+                margin-left: $margin;
+            }
+        }
+    }
+}

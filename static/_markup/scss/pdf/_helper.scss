@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+$c-blue: #3a7acc;
+$c-red: #de4343;
+
+$img-path: '/images/mail/';
+
+.c__blue {
+    color: $c-blue !important;
+}
+
+.c__red {
+    color: $c-red !important;
+}
+
+.t__right {
+    text-align: right !important;
+}
+
+.t__center {
+    text-align: center !important;
+}

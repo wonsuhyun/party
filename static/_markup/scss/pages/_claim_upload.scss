@@ -1,0 +1,86 @@
+.ct_claim_upload{
+    .part_title {
+        position: relative;
+        color: #5c8cca;
+        font-size: 17px;
+        margin-bottom: 15px;
+        margin-top: 30px;
+        margin-left: -4px;
+    }
+
+    .file_list {
+        border: 1px solid #c5d3e5;
+        border-radius: 6px;
+        overflow: hidden;
+
+
+        li {
+            position: relative;
+            padding: 16px;
+            &.done {
+                background: #f9f9f9;
+                color:#777777;
+                .btn_file_pop{
+                    background: url( $img-path + "ico_file_done.png") no-repeat center / 28px;
+                }
+            }
+
+            & + li {
+                border-top: 1px solid #eeeeee;
+            }
+
+            .btn_file_pop {
+                width: 50px;
+                height: 22px;
+                position: absolute;
+                right: 0;
+                top: calc( 50% - 11px );
+                background: url( $img-path + "ico_file.png") no-repeat center / 28px;
+                border-left: 1px solid #e0e0e0;
+            }
+        }
+    }
+
+    .btn_wrap {
+        margin-top: 40px;
+    }
+
+    .btn_qmark {
+        position: relative;
+        width: 15px;
+        height: 15px;
+        vertical-align: middle;
+        &:before {
+            content: "";
+            display: inline;
+            width: 15px;
+            height: 100%;
+            top:-1px;
+            left: 2px;
+            position: absolute;
+            background: url( $img-path + 'ico_btn_qmark.png') no-repeat left center / 15px auto;
+            vertical-align: top;
+        }
+    }
+
+    .mi_check .text{
+        color: #555;
+        font-size: 15px;
+    }
+
+    .part {
+        .case {
+            margin-bottom: 14px;
+        }
+
+        .case + .case {
+            margin-top: 17px;
+        }
+
+        .mi_check + .file_list{
+            margin-top: 12px;
+        }
+    }
+}
+
+

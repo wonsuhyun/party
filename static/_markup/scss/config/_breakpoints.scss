@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+@mixin media($class) {
+    @if $class == sss {
+        @media (max-width: 359px) {
+            @at-root .mobile #{&} {
+                @content
+            }
+        }
+    } @else if $class == ss {
+        @media (max-width: 374px) {
+            @at-root .mobile #{&} {
+                @content
+            }
+        }
+    } @else if $class == sm {
+        @media (max-width: 413px) {
+            @at-root .mobile #{&} {
+                @content
+            }
+        }
+    } @else if $class == md {
+        @at-root .mobile #{&} {
+            @content
+        }
+    } @else if $class == lg {
+        //@media (min-width: 481px) {
+        @at-root .desktop #{&} {
+            @content
+        }
+    } @else {
+        @media (#{$class}) {
+            @content
+        }
+    }
+}
+
+@mixin mediaPadding() {
+    padding-left: 25px;
+    padding-right: 25px;
+
+    @include media(md) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    @include media(sm) {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    @include media(ss) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    @include media(sss) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

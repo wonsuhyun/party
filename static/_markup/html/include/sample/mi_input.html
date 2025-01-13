@@ -1,0 +1,286 @@
+<section><!--input-->
+    <h2 class="tpl_title">input</h2>
+
+    <div class="input_group">
+        <label class="input_label">라벨영역</label>
+        <div class="input_box">
+            <input type="text" class="mi_input" placeholder="힌트텍스트">
+        </div>
+    </div>
+
+    <div class="input_group">
+        <label class="input_label">disabled</label>
+        <div class="input_box">
+            <input type="text" class="mi_input" placeholder="힌트텍스트" disabled>
+        </div>
+    </div>
+
+    <div class="input_group">
+        <label class="input_label">readonly</label>
+        <div class="input_box">
+            <input type="text" class="mi_input" placeholder="힌트텍스트" readonly>
+        </div>
+    </div>
+
+    <div class="input_group">
+        <label class="input_label">.disabled</label>
+        <div class="input_box">
+            <input type="text" class="mi_input disabled" placeholder="힌트텍스트" readonly>
+            <p class="input_noti">readonly 속성에 disabled 스타일 적용할 경우 .disabled 사용</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="input_group full">
+        <label class="input_label">라벨영역이 100%일때</label>
+        <div class="input_box">
+            <input type="text" class="mi_input" placeholder="힌트텍스트">
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="input_group">
+        <label class="input_label">버튼과 함께</label>
+        <div class="input_box">
+            <input type="text" class="mi_input" placeholder="힌트텍스트">
+            <button type="button" class="mi_btn color w__80">확인</button>
+        </div>
+    </div>
+
+    <div class="input_group">
+        <label class="input_label">radio와 함께</label>
+        <div class="input_box">
+            <input type="tel" class="mi_input" placeholder="주민번호 앞 6자리">
+
+            <div class="check_group init bar" data-name="gender">
+                <label class="mi_check">
+                    <input type="radio" name="gender">
+                    <span class="text">남</span>
+                </label>
+
+                <label class="mi_check">
+                    <input type="radio" name="gender">
+                    <span class="text">여</span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="input_group">
+        <label class="input_label sub">라벨<em>두줄일때</em></label><!--라벨값 em 태그쓸때 sub-->
+        <div class="input_box">
+            <input type="text" class="mi_input">
+            <p class="input_noti">.input_noti: 부가 텍스트가 들어가는 영역</p>
+        </div>
+    </div>
+
+    <div class="input_group">
+        <label class="input_label">주민번호</label>
+        <div class="input_box">
+            <input type="tel" class="mi_input">
+            <span class="input_connect">-</span>
+            <input type="tel" class="mi_input">
+        </div>
+    </div>
+
+    <div class="input_group">
+        <label class="input_label">휴대폰번호</label>
+        <div class="input_box">
+            <input type="tel" class="mi_input">
+            <span class="input_connect">-</span>
+            <input type="tel" class="mi_input">
+            <span class="input_connect">-</span>
+            <input type="tel" class="mi_input">
+        </div>
+    </div>
+
+    <div class="input_group">
+        <div class="input_label">이메일</div>
+        <div class="input_box">
+            <div class="f__item">
+                <input type="text" class="mi_input email1">
+            </div>
+            <span class="input_connect">@</span>
+            <div class="f__item">
+                <input type="text" class="mi_input ma_b el_hidden email2">
+                <select class="mi_input select init email2_changer">
+                    <option value="" selected disabled hidden>선택</option>
+                    <option value="naver.com">naver.com</option>
+                    <option value="daum.net">daum.net</option>
+                    <option value="hanmail.net">hanmail.net</option>
+                    <option value="gmail.com">gmail.com</option>
+                    <option value="nate.com">nate.com</option>
+                    <option value="mibank.me">mibank.me</option>
+                    <option value="mibank">직접입력</option>
+                </select>
+            </div>
+
+            <p class="input_noti bullet">* 가급적 <span class="c__point">네이버, 다음, 지메일 등</span> 개인메일주소를 적어주세요 - 앞에 별표시 있는 경우 내어쓰기: .input_noti에 .bullet 추가</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="input_group">
+        <label class="input_label">검색</label>
+        <div class="input_box">
+            <input type="text" class="mi_input search" placeholder="검색어를 입력하세요">
+            <button type="button" class="btn_search"><span class="t__hidden">검색</span></button>
+        </div>
+    </div>
+
+    <div class="f__box">
+        <input type="text" class="mi_input search" placeholder="검색어를 입력하세요">
+        <button type="button" class="btn_search"><span class="t__hidden">검색</span></button>
+    </div>
+
+    <hr>
+
+    <div class="input_group">
+        <label class="input_label">select</label>
+        <div class="input_box">
+            <select class="mi_input select init">
+                <option value="" selected disabled hidden>선택</option>
+                <option value="">옵션값 1</option>
+                <option value="">옵션값 2</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="input_group">
+        <label class="input_label">disabled</label>
+        <div class="input_box">
+            <select class="mi_input select init" disabled>
+                <option value="" selected disabled hidden>선택</option>
+                <option value="">옵션값 1</option>
+                <option value="">옵션값 2</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="input_group">
+        <label class="input_label">popSelect</label>
+        <div class="input_box">
+            <input class="mi_input select" data-pop="popSelect" data-name="radio_list" readonly placeholder="선택">
+            <p class="input_noti">&lt;input class="mi_input select" data-pop="popSelect" data-name="radio_list" readonly placeholder="선택"&gt;</p>
+        </div>
+    </div>
+
+    <div class="input_group">
+        <label class="input_label">.not_yet</label>
+        <div class="input_box not_yet">
+            <select class="mi_input select">
+                <option value="" selected disabled hidden>선택</option>
+                <option value="">옵션값 1</option>
+                <option value="">옵션값 2</option>
+            </select>
+            <p class="input_noti">&lt;select&gt; option 안 열리게 하기 위해 사용 - 부모 .input_box 에 .not_yet 추가</p>
+        </div>
+    </div>
+
+
+    <div class="input_group">
+        <label class="input_label">custom</label>
+        <div class="input_box drop_select_wrap">
+            <div class="mi_input select drop_select">
+                <span class="checked_item">위탁수하물 도착지연<button class="close"></button></span>
+            </div>
+            <div class="drop_down_conts">
+                <p class="select_noti c__point"><strong>복수선택</strong>이 <strong>가능</strong>합니다</p>
+                <div class="cs_scroll">
+                    <h3 class="select_title">여행목적</h3>
+                    <div class="check_group list">
+                        <label class="mi_check">
+                            <input type="radio" name="radio_list" value="radio_list">
+                            <span class="text">체험학습</span>
+                            <i class="ico_check"></i>
+                        </label>
+                        <label class="mi_check">
+                            <input type="radio" name="radio_list" value="radio_list">
+                            <span class="text">체험학습</span>
+                            <i class="ico_check"></i>
+                        </label>
+                    </div>
+
+                    <h3 class="select_title">여행목적</h3>
+                    <div class="check_group list">
+                        <label class="mi_check">
+                            <input type="radio" name="radio_list" value="radio_list">
+                            <span class="text">체험학습</span>
+                            <i class="ico_check"></i>
+                        </label>
+                        <label class="mi_check">
+                            <input type="radio" name="radio_list" value="radio_list">
+                            <span class="text">체험학습</span>
+                            <i class="ico_check"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <hr>
+
+    <h3 class="tpl_sub_title">input_group col2</h3>
+    <p class="tpl_text">열 개수에 따라 클래스로 input 너비 제어 <br>ex. col2, col3 ...</p>
+
+    <div class="input_group col2">
+        <div class="input_box">
+            <input type="text" class="mi_input datepicker" readonly placeholder="여행시작일">
+        </div>
+
+        <div class="input_box">
+            <input type="text" class="mi_input datepicker" readonly placeholder="여행종료일">
+        </div>
+
+        <div class="input_box">
+            <input type="tel" class="mi_input" maxlength="6" placeholder="주민번호 앞6자리">
+        </div>
+
+        <div class="input_box">
+            <select class="mi_input select init">
+                <option value="" selected disabled hidden>성별</option>
+                <option value="M">남자</option>
+                <option value="F">여자</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="mi_common_pop select" id="popSelect">
+        <div class="inner">
+            <div class="pop_wrap">
+                <h2 class="pop_title">
+                    <button type="button" class="btn_close"></button>
+                </h2>
+
+                <div class="pop_body cs_scroll">
+                    <div class="pop_contents">
+                        <h3 class="select_title">여행목적</h3>
+
+                        @@for (var i = 0; i <= 2; i++) {
+                        <div class="check_group list" data-name="radio_list">
+                            <label class="mi_check">
+                                <input type="radio" name="radio_list" value="radio_list">
+                                <span class="text">체험 학습 체험 학습 체험 학습 체험 학습 체험학습 체험학습 체험학습 체험학습 체험학습 체험학습 체험학습 체험학습</span>
+                                <i class="ico_check"></i>
+                            </label>
+
+                            @@for (var j = 0; j <= 3; j++) {
+                            <label class="mi_check">
+                                <input type="radio" name="radio_list" value="radio_list">
+                                <span class="text">list</span>
+                                <i class="ico_check"></i>
+                            </label>
+                            }
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

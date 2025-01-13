@@ -1,0 +1,36 @@
+.ct_claim_insured-info{
+
+    .input_group {
+        padding: {
+            left: 4px;
+            right: 4px;
+        }
+    }
+
+    .part_title {
+        position: relative;
+        color: #5c8cca;
+        font-size: 17px;
+        margin-bottom: 15px;
+        margin-top: 30px;
+        label {
+            position: absolute;
+            right: 4px;
+            top: 0;
+            .text {
+                font-size: 15px;
+                color: #777;
+            }
+        }
+    }
+
+    .btn_wrap {
+        margin-top: 40px;
+    }
+
+    .part + .part{
+        margin-top: 40px;
+    }
+}
+
+

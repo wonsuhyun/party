@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    @@include('common/head.html')
+</head>
+
+<body>
+<div id="gnb"></div>
+@@include('common/lnb.html')
+
+<div class="wrap">
+    <div id="container" class="ct_claim_insured-info">
+        @@include('common/header_title.html')
+        <div class="contents_step  with_title no_tab">
+            <a href="/" class="btn_prev common_wrap">이전</a>보상간편청구
+        </div>
+        @@include('common/contents_step_claim.html',{ step: 'step1' })
+
+        <div id="contents">
+            <div class="common_wrap">
+                <div>
+                    <h4 class="part_title">
+                        <strong>피보험자 인적사항</strong>
+                        <label class="mi_check">
+                            <input type="checkbox" name=""/>
+                            </i><span class="text t__underline">수정하기</span>
+                        </label>
+                    </h4>
+                    <div class="input_group">
+                        <label class="input_label">이름</label>
+                        <div class="input_box">
+                            <input type="text" class="mi_input"/>
+                        </div>
+                    </div>
+                    <div class="input_group">
+                        <label class="input_label sub">주민번호<em>(외국인번호)</em></label>
+                        <div class="input_box">
+                            <input type="text" class="mi_input"/><span class="input_connect">-</span>
+                            <input type="text" class="mi_input"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="part_title">
+                        <strong>보상안내 연락처</strong>
+                        <label class="mi_check">
+                            <input type="checkbox" name="email"/>
+                            <i class="ico_circle"></i><span class="text">이메일로도 받기</span>
+                        </label>
+                    </h4>
+                    <div class="input_group">
+                        <label class="input_label">휴대폰번호</label>
+                        <div class="input_box">
+                            <input type="text" class="mi_input"/>
+                        </div>
+                    </div>
+                    <div class="input_group email">
+                        <label class="input_label">이메일</label>
+                        <div class="input_box">
+                            <div class="f__item">
+                                <input type="text" class="mi_input email1">
+                            </div>
+                            <span class="input_connect">@</span>
+                            <div class="f__item">
+                                <input type="text" class="mi_input ma_b el_hidden email2">
+                                <select class="mi_input select email2_changer">
+                                    <option value="" selected="" disabled="" hidden="">선택</option>
+                                    <option value="naver.com">naver.com</option>
+                                    <option value="daum.net">daum.net</option>
+                                    <option value="hanmail.net">hanmail.net</option>
+                                    <option value="gmail.com">gmail.com</option>
+                                    <option value="nate.com">nate.com</option>
+                                    <option value="mibank.me">mibank.me</option>
+                                    <option value="mibank">직접입력</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="common_wrap">
+                <div class="btn_wrap dual">
+                    <button class="mi_btn white small">임시저장</button>
+                    <button class="mi_btn color big">다음</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer"></div>
+
+@@include('common/js.html')
+</body>
+</html>

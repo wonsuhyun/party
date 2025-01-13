@@ -1,0 +1,169 @@
+@charset "UTF-8";
+
+.mi_btn {
+    @include btn-height(50px);
+    display: inline-block;
+    width: 100%;
+    background-color: $white;
+    border: 1px solid $c-border-default;
+    border-radius: $default-border-radius;
+    font-size: 17px;
+    color: #777;
+    text-align: center;
+
+    &:disabled {
+        background-color: $c-disabled-input-bg;
+        border-color: $c-disabled-btn-white-border;
+        color: $c-disabled-font;
+    }
+
+    &.color {
+        background-color: $c-point;
+        border-color: $c-point;
+        color: $white;
+
+
+
+        &.type2 {
+            background-color: #236bb2;
+            border-color: #236bb2;
+        }
+
+        &.disabled,
+        &:disabled {
+            background-color: $c-disabled-btn-color-bg;
+            border-color: $c-disabled-btn-color-bg;
+            color: $white;
+
+            &.on {
+                position: relative;
+                color: $c-disabled-btn-color-bg !important;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: calc(50% - 15px);
+                    left: calc(50% - 15px);
+                    width: 24px;
+                    height: 24px;
+                    border: 3px solid rgba(255, 255, 255, .5);
+                    border-radius: 50%;
+                    border-top-color: $c-point;
+                    animation: spin 1s ease-in-out infinite;
+                }
+            }
+        }
+    }
+
+    &.white {
+        border-color: $c-point;
+        color: $c-point;
+
+        &.type2 {
+            border-color: $c-light_blue;
+        }
+
+        &:disabled {
+            color: $c-disabled-font !important;
+            background-color: #fafafa;
+            border-color: #ddd;
+        }
+    }
+
+    &.c_red {
+        background-color: $c-light_red;
+        border-color: $c-light_red;
+        color: $white;
+
+        &:disabled {
+            background-color: #f4e8e6;
+            border-color: #f4e8e6;
+        }
+    }
+
+    &.w_red {
+        border-color: $c-light_red;
+        color: $c-light_red;
+    }
+
+    &.w__red {
+        border-color: $c-red;
+        font-weight: bold;
+        color: $c-red;
+
+        &:disabled {
+            color: $c-light_red;
+            border-color: $c-light_red;
+        }
+    }
+
+    &.sm {
+        @include btn-height(23px);
+        width: auto;
+        font-size: 13px;
+        padding: 0 10px;
+    }
+}
+
+.btn_wrap {
+    display: flex;
+    align-items: center;
+
+    .mi_btn {
+        flex: 1;
+
+        & + .mi_btn {
+            margin-left: 10px;
+        }
+    }
+
+    &.row {
+        flex-direction: column;
+
+        .mi_btn {
+            flex: 1 0 auto;
+
+            & + .mi_btn {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    &.dual {
+        .mi_btn {
+            &.big {
+                flex : 1.5;
+            }
+
+            &.small {
+                flex : 0.8;
+            }
+        }
+    }
+}
+
+/* icon button */
+.btn_download {
+    @include add-ico(btn_download, after, 23px)
+}
+
+.btn_add {
+    @include add-ico(btn_add, before, 13px)
+}
+
+.btn_complete {
+    @include add-ico(btn_complete, before, 14px)
+}
+
+.btn_emark {
+    @include add-ico(btn_emark, before, 16px, $withText: false);
+    width: 30px;
+    height: 30px;
+}
+
+.btn_search {
+    @include add-ico(btn_search, before, 26px, $withText: false);
+    width: 30px;
+    height: 30px;
+}

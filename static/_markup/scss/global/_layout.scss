@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    &.desktop {
+        $pd-contents: 70px;
+
+        min-width: 601px;
+        padding-top: $h-gnb-pc;
+
+        .wrap {
+            min-height: calc(100vh - #{$h-gnb-pc + $h-footer-pc});
+            padding: $pd-contents 0;
+            background-color: $c-bg-body;
+            background-repeat: no-repeat;
+            background-position: center 0;
+            background-size: 2560px auto;
+            background-attachment: fixed;
+        }
+
+        #container {
+            width: $w-contents-pc;
+            min-height: 700px;
+            margin: 0 auto;
+            box-shadow: 0 30px 100px rgba(0, 0, 0, 0.08);
+        }
+    }
+
+    &.mobile {
+        .header-dev,
+        .header_sub_menu,
+        #footer {
+            display: none;
+        }
+
+        #container {
+            min-height: 100vh;
+        }
+    }
+}
+
+.mi_scroll_none {
+    overflow: hidden;
+}
+
+#container {
+    padding-bottom: $h-contents-padding-bottom;
+    background: $white;
+
+    @at-root .app & {
+        padding-bottom: $h-app-bottom-tab
+    }
+
+    &.bg {
+        background-color: $c-bg-page;
+    }
+
+    &.bottom_fix {
+        position: relative;
+        padding-bottom: $h-contents-padding-bottom + 90px; // + btn height
+
+        @at-root .mobile & {
+            padding-bottom: 35px;
+        }
+        @at-root .app & {
+            padding-bottom: $h-app-bottom-tab + 90px
+        }
+
+
+        .fix_wrap {
+            position: absolute;
+            left: 0;
+            bottom: $h-contents-padding-bottom;
+            width: 100%;
+
+            @at-root .mobile & {
+                position: static;
+                margin-top: 40px;
+            }
+
+            @at-root .app & {
+                margin-top: 0;
+                position: absolute;
+                bottom: $h-app-bottom-tab
+            }
+        }
+    }
+}
+
+.common_wrap {
+    @include mediaPadding;
+
+    &.bg {
+        background-color: $c-bg-page;
+    }
+
+    &.white {
+        background-color: $white;
+    }
+}
+
+#headerSubMenu {
+    background: $c-bg-body;
+    z-index: 100;
+
+    .sub_menu {
+        display: none;
+    }
+}

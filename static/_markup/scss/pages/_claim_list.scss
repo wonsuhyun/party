@@ -1,0 +1,169 @@
+
+.ct_claim_list {
+    #contents {
+        padding-top: 30px;
+    }
+    .claim_progress_box {
+        border:1px solid #dfdfdf;
+        border-radius: 8px;
+        background: #fff;
+        overflow: hidden;
+        position: relative;
+        & + .claim_progress_box {
+            margin-top: 12px;
+        }
+
+        .btn_delete_claim {
+            position: absolute;
+            font-size: 14px;
+            color: #777;
+            top: 24px;
+            right: 20px;
+            text-decoration: underline;
+        }
+
+        .btn_add_claim {
+            color: #5c8cca;
+            border: none;
+            border-top: 1px solid #dfdfdf;
+            background: #edf2f8;
+            border-radius: 0;
+            line-height: 58px;
+            height: 60px;
+        }
+
+        .btn_restart {
+            line-height: 58px;
+            height: 60px;
+            border-radius: 0;
+        }
+
+        .box_title {
+            padding: 20px 70px 0 20px;
+            margin-bottom: 15px;
+            color: $dark;
+            font-size: 18px;
+            font-weight: bold;
+            white-space: nowrap;
+            word-break: keep-all;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .progress {
+            padding: 0 20px;
+            line-height: 1.4;
+            .box {
+                background: #f7faff;
+                padding: 24px 10px 20px 10px;
+                display: flex;
+                margin-bottom: 30px;
+                border-radius: 4px;
+                li {
+                    flex : 1;
+                    text-align: center;
+                    color: #b6b6b6;
+                    font-size: 11px;
+                    padding-top: 20px;
+                    position: relative;
+
+                    &:first-child::before {
+                        content:none
+                    }
+
+                    .ball {
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background: #dfdfdf;
+                        position: absolute;
+                        top: 0;
+                        left: calc( 50% - 5px );
+                    }
+
+                    &::before {
+                        content:'';
+                        width: calc( 100% - 10px );
+                        height: 1px;
+                        background: #dfdfdf;
+                        position: absolute;
+                        top: 5px;
+                        right: calc(50% + 5px);
+                    }
+
+                    &.done {
+                        color: #888888;
+                        .ball{
+                            background: #5c8cca;
+                        }
+
+                        &::before{
+                            background: #5c8cca;
+                        }
+                    }
+
+                    &.now {
+                        color: #5c8cca;
+                        .ball{
+                            background: #5c8cca3d;
+                            width: 18px;
+                            height: 18px;
+                            left: calc( 50% - 9px );
+                            top: -4px;
+                            &::after{
+                                content: "";
+                                position: absolute;
+                                width: 10px;
+                                height: 10px;
+                                background: #5c8cca;
+                                left: 4px;
+                                top: 4px;
+                                border-radius: 50%;
+                            }
+                        }
+                        &::before{
+                            background: #5c8cca;
+                        }
+                    }
+
+                    &.red {
+                        color: #de4343;
+                        .ball{
+                            background: #de43433d;
+                            &::after{
+                                background: #de4343;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .info {
+            padding: 0 20px 30px 20px;
+            .c__gray {
+                color: #ddd;
+            };
+
+            dl {
+                display: table;
+                width: 100%;
+                font-size: 14px;
+
+                & + dl {
+                    margin-top: 6px;
+                }
+
+                dd,dt {
+                    display: table-cell;
+                }
+
+                dt {
+                    width: 100px;
+                    color: #999999;
+                    padding-left: 6px;
+                }
+            }
+        }
+    }
+}

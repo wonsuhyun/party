@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+#popCertificate {
+    .pop_title {
+        padding-bottom: 20px
+    }
+    
+    .pop_contents {
+        padding-top: 0;
+        font-size: 15px;
+    }
+
+    .pop_bottom {
+        text-align: center;
+
+        &.down {
+            padding-top: 2px;
+
+            &:before {
+                content: '';
+                display: inline-block;
+                width: 21px;
+                height: 18px;
+                background: url($img-path + 'ico_scroll_down.png') no-repeat center top / 21px auto;
+                opacity: 1;
+                animation: twinkle_8times 8s;
+            }
+        }
+    }
+
+    .check_group.tab {
+        .mi_check {
+            height: 44px;
+            padding: 0;
+            background: $c-disabled-input-bg;
+            margin-top: 0;
+            border-bottom-color: $dark;
+            border-radius: 0;
+
+            &.checked {
+                background: #fff;
+                height: auto;
+                border-color: $dark;
+            }
+
+            input:checked {
+                & ~ .text {
+                    color: $dark;
+                }
+            }
+
+            .text {
+                text-align: center;
+                line-height: 42px;
+            }
+        }
+    }
+
+    .cert_type {
+        display: none;
+        padding-top: 31px;
+        text-align: center;
+        line-height: 1;
+
+        .mi_check + .mi_check {
+            margin-left: 25px;
+
+            @include media(sss) {
+                margin-left: 12px;
+            }
+        }
+
+        .ico_circle {
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    .email_wrap {
+        margin-top: 15px;
+        padding: 10px;
+        //background: $c-bg-page;
+
+        .input_connect {
+            flex-basis: 30px
+        }
+    }
+
+    .name_space {
+        margin-top: 30px;
+        padding-top: 10px;
+        border-top: 1px solid $c-border-default;
+
+        &.alone {
+            .all,
+            .ico_circle {
+                display: none;
+            }
+
+            .mi_check {
+                pointer-events: none;
+            }
+
+            .text {
+                color: #777
+            }
+        }
+
+        .input_group {
+            align-items: center;
+            padding: 0 10px;
+        }
+
+        .text {
+            width: 82px;
+            padding-right: 6px;
+            @include ellipsis
+        }
+    }
+
+    .pop_noti {
+        margin-bottom: 30px;
+        color: #555;
+        line-height: 24px;
+    }
+
+    .all {
+        margin: 0 10px 20px
+    }
+}

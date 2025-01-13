@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+.confirm_wrap {
+    @include set-font(16px, #333);
+    padding: 20px 24px 5px;
+    text-align: center;
+
+    .btn_wrap {
+        margin-top: 12px;
+    }
+}
+
+.premium_wrap {
+    padding: 20px 0;
+    text-align: center;
+
+    .premium {
+        color: $c-point;
+        line-height: 28px;
+    }
+
+    .origin {
+        margin: 0 -6px 0 8px;
+        color: #b6b6b6;
+        text-decoration: line-through;
+
+        em {
+            font-size: 16px;
+        }
+    }
+
+    .total {
+        margin-left: 8px;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 26px;
+        vertical-align: top;
+    }
+
+    .save_info {
+        @include set-font(13px, #777);
+        display: inline-block;
+        width: auto;
+        margin: 10px auto 0;
+        padding: 3px 37px;
+        background: $white;
+        border-radius: 26px;
+
+        @include media(sss) {
+            padding: 3px 25px
+        }
+
+        &.square {
+            padding: {
+                top: 8px;
+                bottom: 8px;
+            }
+            border-radius: 4px;
+        }
+
+        .sub {
+            margin-top: 2px;
+            color: #999;
+        }
+    }
+}
+
+.pay_type_wrap {
+    padding: 30px 0 5px;
+
+    h5 {
+        @include set-font(18px, $dark);
+        margin-bottom: 20px;
+    }
+
+    .check_group {
+        padding: 0 4px;
+        font-size: 16px;
+
+        .checked {
+            border-color: $c-light_blue !important;
+
+            .text {
+                color: #333;
+            }
+        }
+    }
+
+    .input_group {
+        margin-top: 10px;
+        padding: {
+            left: 24px;
+            right: 4px;
+        };
+    }
+}
+
+.account_info_wrap {
+    margin: 5px 0;
+}
+
+.account_info {
+    margin: 0 4px 20px;
+    padding: 14px 10px 20px;
+    background: $c-bg-box;
+    border-radius: 6px;
+
+    .deadline {
+        @include set-font(16px, $c-red);
+        margin-bottom: 17px;
+        padding: 4px 0 5px;
+        background: $white;
+        border-radius: 17px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    li {
+        display: flex;
+        line-height: 25px;
+        color: #333;
+
+        @include media(sss) {
+            font-size: 14px;
+        }
+
+        & + li {
+            margin-top: 8px;
+        }
+
+        span {
+            flex: 1;
+        }
+    }
+
+    .title {
+        flex-grow: .64;
+        margin-right: 20px;
+        text-align: right;
+
+        @include media(sss) {
+            margin-right: 12px;
+        }
+    }
+
+    button {
+        margin-left: 6px;
+    }
+}
+
+.btn_cancel {
+    float: right;
+    color: #777;
+    text-decoration: underline;
+}

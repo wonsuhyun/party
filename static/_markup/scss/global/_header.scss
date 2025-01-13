@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+.header_title {
+    @include set-font(19px, $white);
+    position: relative;
+    height: $h-header-title;
+    line-height: $h-header-title;
+    background-color: $c-point;
+    z-index: 89;
+    text-align: center;
+
+    @at-root .mobile & {
+        display: block;
+        position: sticky;
+        top: 0;
+
+        &.shadow {
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    @at-root .app & {
+        display: none;
+    }
+
+    &.wh {
+        background-color: $white;
+
+        @include media(lg) {
+            display: none;
+        }
+    }
+}
+
+.header_tab {
+    position: relative;
+    display: flex;
+    height: $h-header-tab;
+    padding: 0 8px;
+    background-color: $c-point;
+    z-index: 88;
+
+    a {
+        @include set-font(16px, $white);
+        flex: auto;
+        line-height: 42px;
+        text-align: center;
+        opacity: 0.75;
+
+        &.active {
+            background: $white;
+            border-radius: $default-border-radius $default-border-radius 0 0;
+            color: $dark;
+            opacity: 1;
+            pointer-events: none;
+        }
+    }
+
+    @at-root .mobile & {
+        position: sticky;
+        top: $h-header-title;
+
+        &.shadow {
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    @at-root .app & {
+        top: 0
+    }
+}

@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+.ct_mypage_extension {
+    #contents {
+        padding-top: 30px;
+    }
+    table {
+        .extended {
+            td:last-child{
+                color: $c-point;
+            }
+        }
+    }
+    .mi_table {
+        border-bottom : none;
+        tbody tr:last-child td {
+            padding-bottom: 3px;
+        }
+    }
+
+    .table_wrap {
+        padding-bottom: 10px;
+        border-bottom : 1px solid #ddd;
+    }
+
+
+    .bottom_wrap {
+        margin-top: 46px;
+        .btn_wrap {
+            padding-top: 10px;
+            background: $white;
+        }
+    }
+
+    .btn_date {
+        @include btn-height(45px);
+        display: block;
+        margin: 25px auto 10px;
+        padding: 0 35px;
+        background: $white;
+        border: 1px solid $c-light_blue;
+        border-radius: 23px;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+        @include add-ico(datepicker, before, 19px);
+
+        &:before {
+            background-image: url($img-path-components + 'ico_datepicker.png');
+        }
+    }
+
+    .premium_wrap {
+        margin: 20px 0;
+        background: $c-bg-page;
+
+        .save_info {
+            padding: 3px 20px;
+        }
+    }
+
+    .confirm_wrap {
+        padding-top: 10px;
+    }
+
+    .pay_wrap {
+        border-top: 8px solid #efeff4;
+        overflow: hidden;
+    }
+
+    .table_title {
+        position: relative;
+        margin-bottom: 20px;
+        p {
+            color: $c-point;
+            font-size: 17px;
+        }
+        a {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            color: #999;
+            font-size: 14px;
+            padding-left: 16px;
+            background: url($img-path + "ico_reset.png") no-repeat left center / 14px;
+            border-bottom: 1px solid #999;
+            line-height:1.2
+        }
+    }
+}

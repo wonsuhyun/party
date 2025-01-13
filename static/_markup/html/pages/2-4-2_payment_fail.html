@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    @@include('common/head.html')
+</head>
+
+<body>
+<div id="gnb"></div>
+@@include('common/lnb.html')
+
+<div class="wrap">
+    <div id="container">
+        @@include('common/header.html', { tab2: 'active' })
+
+        <div id="contents">
+
+        </div>
+    </div>
+</div>
+
+<div id="footer"></div>
+
+@@include('common/js.html')
+
+<script>
+    miCommonPop.alert({
+        dCopy: '<div class="icon_box warning"><strong class="c__red">결제 실패</strong><br>결제를 다시 진행해주세요 </div>',
+        dFirstAc: function () {
+            location.href = '/mypage'
+        }
+    });
+</script>
+
+</body>
+</html>

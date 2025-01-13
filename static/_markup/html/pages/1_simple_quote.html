@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    @@include('common/head.html')
+</head>
+
+<body>
+<div id="gnb"></div>
+@@include('common/lnb.html')
+
+<div class="wrap">
+    <!-- TODO 플랜 변경시 <div.ct_simple_quote>에 bg 클래스 추가 -->
+    <div id="container" class="ct_simple_quote modify">
+        @@include('common/header.html', { tab1: 'active' })
+
+        <div id="contents" class="common_wrap">
+            <form id="frmMain">
+                <input type="hidden" name="startDate" value="2022-07-22">
+
+                <!-- TODO 정보입력 부터 노티까지 <div.apply_only>로 싸주고 신청 flow에서만 노출 -->
+                <div class="apply_only">
+                    <div class="input_group col2 travel_info">
+                        <div class="input_box">
+                            <input type="text" class="mi_input datepicker" name="startDate" autofocus readonly placeholder="출발일">
+                        </div>
+
+                        <div class="input_box with_noti">
+                            <select class="mi_input select" name="startTime">
+                                <option value="" selected disabled hidden>자택 출발시간</option>
+                            </select>
+                            <p class="input_noti c__point">집을 나선 경우, 현재시간과 가까운 시간 선택</p>
+                        </div>
+
+                        <div class="input_box">
+                            <input type="text" class="mi_input datepicker" name="endDate" readonly placeholder="귀국일">
+                        </div>
+
+                        <div class="input_box">
+                            <select class="mi_input select" name="endTime">
+                                <option value="" selected disabled hidden>자택 도착시간</option>
+                            </select>
+                        </div>
+
+                        <div class="input_box">
+                            <input type="tel" class="mi_input" name="birthRep" maxlength="6" placeholder="주민번호 앞6자리">
+                        </div>
+
+                        <div class="input_box">
+                            <select class="mi_input select" name="genderRep">
+                                <option value="" selected disabled hidden>성별</option>
+                                <option value="M">남자</option>
+                                <option value="F">여자</option>
+                            </select>
+                        </div>
+
+                        <div class="input_box">
+                            <input class="mi_input select" data-pop="popNation" data-name="nationCd" readonly placeholder="여행국가">
+                        </div>
+
+                        <button type="button" class="btn_qmark">여러국가 여행시</button>
+                    </div>
+
+                    <div class="mi_common_pop select type2" id="popNation">
+                        <div class="inner">
+                            <div class="pop_wrap">
+                                <h2 class="pop_title">
+                                    <button type="button" class="btn_close"></button>
+                                </h2>
+
+                                <div class="pop_body cs_scroll">
+                                    <div class="pop_contents">
+                                        <div class="check_group list">
+                                            <h3 class="select_title">입국시 질병보장금액 지정국가</h3>
+
+                                            <label class="mi_check">
+                                                <input type="radio" name="nationCd">
+                                                <span class="text">라오스</span>
+                                                <i class="ico_check"></i>
+                                            </label>
+
+                                            @@for (var i = 0; i <= 2; i++) {
+                                            <label class="mi_check">
+                                                <input type="radio" name="nationCd">
+                                                <span class="text">list</span>
+                                                <i class="ico_check"></i>
+                                            </label>
+                                            }
+                                        </div>
+
+                                        <div class="check_group list">
+                                            <h3 class="select_title">주요 여행국가</h3>
+
+                                            @@for (var i = 0; i <= 5; i++) {
+                                            <label class="mi_check">
+                                                <input type="radio" name="nationCd">
+                                                <span class="text">list</span>
+                                                <i class="ico_check"></i>
+                                            </label>
+                                            }
+                                        </div>
+
+                                        <div class="check_group list">
+                                            <h3 class="select_title">전체국가</h3>
+
+                                            @@for (var i = 0; i <= 9; i++) {
+                                            <label class="mi_check">
+                                                <input type="radio" name="nationCd">
+                                                <span class="text">list</span>
+                                                <i class="ico_check"></i>
+                                            </label>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="mi_btn color btn_estimate">보험료 확인</button>
+
+                    <div class="noti">
+                        <p class="t__bg_line"><span class="c__red">태풍/지진</span> <span class="c__blue">등 천재지변도 보상가능</span></p>
+                        <ul>
+                            <li>출국직전까지 가입가능</li>
+                            <li>보험증서는 가입즉시 이메일로 발송<br>영문증명서도 바로 발급가능</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- TODO 보험료 정보 없을 경우 <div.estimate_wrap>에 el_hidden 클래스 추가 -->
+                <div class="estimate_wrap">
+                    <dl class="estm_summary align_center">
+                        <dt>보험기간</dt>
+                        <dd><em>4</em>일</dd>
+
+                        <dt>보험나이</dt>
+                        <dd><em>31</em>세</dd>
+
+                        <dt>성별</dt>
+                        <dd>여자</dd>
+
+                        <!-- TODO 질병보장금액 지정국가의 경우 <dt, dd>에 c__point 클래스 추가 -->
+                        <dt>여행국가</dt>
+                        <dd>미국</dd>
+                    </dl>
+
+                    <!--TODO 플랜 변경시 <div.mod_heading> 노출-->
+                    <div class="mod_heading">
+                        <h3 class="page_title">플랜을 선택해주세요</h3>
+                        <p class="mod_noti">아래 보험료는 <strong>10% 할인쿠폰이 적용된 금액</strong>입니다</p>
+                    </div>
+
+                    <div class="plan_wrap">
+                        <div class="check_group tab plan_tab" data-name="planTypeCd">
+                            <!-- TODO 선택된 플랜(선택된 플랜 없을 경우 든든플랜)의 <label>에 checked 클래스 추가, <input>에 checked 추가 -->
+                            <label class="mi_check">
+                                <input type="radio" name="planTypeCd" value="A">
+
+                                <div class="text">
+                                    든든플랜
+                                    <div class="premium"><em>98,000</em>원</div>
+                                </div>
+
+                                <i class="ico_circle"></i>
+                            </label>
+
+                            <label class="mi_check checked">
+                                <input type="radio" name="planTypeCd" value="B" checked>
+
+                                <div class="text">
+                                    안심플랜
+                                    <div class="premium"><em>1,131,190</em>원</div>
+                                </div>
+
+                                <i class="ico_circle"></i>
+                            </label>
+                        </div>
+
+                        <!-- TODO 안선택한 플랜(선택된 플랜 없을 경우 plan_B)의 <div.plan>에 el_hidden 클래스 추가 -->
+                        <div class="plan common_wrap">
+                            <div class="plan_A">
+                            <!--<div class="plan_A el_hidden">-->
+                                @@include('components/plan_A.html')
+                            </div>
+
+                            <!--<div class="plan_B">-->
+                            <div class="plan_B el_hidden">
+                                @@include('components/plan_B.html')
+                            </div>
+
+                            <h5 class="cvrg_group f__box">
+                                <span>국내실손의료비<span class="block">(질병/상해)</span></span>
+
+                                <div class="check_group capsule" data-name="radio_capsule">
+                                    <label class="mi_check">
+                                        <input type="radio" name="radio_capsule" value="1">
+                                        <span class="text off">미포함</span>
+                                    </label>
+
+                                    <label class="mi_check">
+                                        <input type="radio" name="radio_capsule" value="2" checked>
+                                        <span class="text active">포함</span>
+                                    </label>
+                                </div>
+                            </h5>
+
+                            <!-- TODO 미포함일 경우 <ul>에 off 클래스 추가 -->
+                            <ul class="act_med_exp">
+                                <li>
+                                    <span class="w__48">입원 </span><span class="sub">급여</span>
+                                    <div class="price">1,000만원</div>
+                                    <div class="price0">0원</div>
+                                </li>
+                                <li>
+                                    <span class="t__hidden">입원 </span><span class="sub pl_48">비급여</span>
+                                    <div class="price">1,000만원</div>
+                                    <div class="price0">0원</div>
+                                </li>
+                                <li class="mt_12">
+                                    <span class="w__48">통원 </span><span class="sub">급여</span>
+                                    <div class="price">10만원</div>
+                                    <div class="price0">0원</div>
+                                </li>
+                                <li>
+                                    <span class="t__hidden">통원 </span><span class="sub pl_48">비급여</span>
+                                    <div class="price">10만원</div>
+                                    <div class="price0">0원</div>
+                                </li>
+                                <li class="mt_12">
+                                    도수치료비/체외충격파/증식
+                                    <div class="price">350만원</div>
+                                    <div class="price0">0원</div>
+                                </li>
+                                <li>
+                                    MRI/MRA 진단
+                                    <div class="price">300만원</div>
+                                    <div class="price0">0원</div>
+                                </li>
+                                <li>
+                                    주사료
+                                    <div class="price">250만원</div>
+                                    <div class="price0">0원</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="check_group mi_button apply_only">
+                        <label class="mi_check mi_btn white">
+                            1인 가입
+                            <input type="radio" name="applyType" value="1">
+                        </label>
+
+                        <label class="mi_check mi_btn color">
+                            2인 이상 가입
+                            <input type="radio" name="applyType" value="2">
+                        </label>
+                    </div>
+                </div>
+
+                <!--TODO 플랜 변경시 <div.btn_wrap> 노출-->
+                <div class="btn_wrap row">
+                    <button type="button" class="mi_btn color">확인</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="footer"></div>
+
+@@include('common/js.html')
+
+<script>
+twinkle($('.mod_heading'), 3);
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.apply_info {
+    background: $white;
+    padding: 0 20px;
+    border: 1px solid #dfdfdf;
+    border-radius: 8px;
+
+    ul {
+        padding: 20px 0;
+    }
+
+    ul:not(:first-child) {
+        border-top: 1px solid #e6e6e6;
+    }
+
+    li {
+        display: flex;
+        line-height: 25px;
+        color: #333;
+
+        & + li {
+            margin-top: 10px;
+        }
+
+        .title {
+            flex-basis: 86px;
+            margin-right: 12px;
+
+            @include media(sss) {
+                flex-basis: 72px;
+            }
+        }
+    }
+
+    button.sm {
+        margin-left: 6px;
+    }
+}

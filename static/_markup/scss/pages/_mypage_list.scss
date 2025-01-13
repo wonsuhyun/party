@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+.ct_mypage_list {
+    #contents {
+        padding-top: 30px;
+    }
+
+    .my_info {
+        padding: 20px 18px 20px 26px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        background: $white;
+        border: 1px solid #dfdfdf;
+        position: relative;
+
+        .claim_status {
+            position: absolute;
+            font-size: 13px;
+            top: 20px;
+            right: 18px;
+        }
+
+        &.disabled {
+            .title,
+            .bottom {
+                color: #999;
+
+                a {
+                    color: #999;
+
+                    &::after {
+                        border-color: #999;
+                    }
+                }
+            }
+        }
+    }
+
+    .label_status {
+        margin-left: -6px;
+    }
+
+    .title {
+        @include ellipsis
+    }
+
+    .bottom {
+        @include set-font(14px, #666);
+
+        @include media(sss) {
+            font-size: 13px;
+        }
+
+        a {
+            position: relative;
+            float: right;
+            padding-right: 14px;
+            color: $c-point;
+
+            &::after {
+                @include arrow-right(6px, 2px, $c-point);
+                content: '';
+                position: absolute;
+                top: 6px;
+                right: 5px;
+            }
+        }
+
+    }
+}

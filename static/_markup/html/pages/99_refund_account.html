@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    @@include('common/head.html')
+</head>
+
+<body>
+<div id="gnb"></div>
+
+<div class="wrap">
+    <div id="container" class="ct_refund">
+        <h2 class="header_title">해외여행자보험</h2>
+
+        <div id="contents" class="common_wrap">
+            <h3 class="title">환불받을 계좌정보를 입력해주세요</h3>
+
+            <!-- TODO 이미 등록한 경우 모든 <button>과 <input>에 disabled 추가 -->
+            <div class="input_group">
+                <label class="input_label">은행</label>
+                <div class="input_box">
+                    <select class="mi_input select init">
+                        <option value="" selected disabled hidden>선택</option>
+                        <option value="">옵션값 1</option>
+                        <option value="">옵션값 2</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input_group">
+                <label class="input_label">계좌번호</label>
+                <div class="input_box">
+                    <input type="text" class="mi_input" placeholder="'-' 제외'">
+                    <button type="button" class="mi_btn color w__80">확인</button>
+                </div>
+            </div>
+
+            <!-- TODO 예금주 직접 받아야 할 경우 el_hidden 제거 -->
+            <div class="input_group el_hidden">
+                <label class="input_label">예금주</label>
+                <div class="input_box">
+                    <input type="text" class="mi_input">
+                </div>
+            </div>
+
+            <div class="btn_wrap">
+                <button type="button" class="mi_btn color" disabled>등록</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer"></div>
+
+@@include('common/js.html')
+
+</body>
+</html>

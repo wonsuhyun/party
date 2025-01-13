@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+// 모바일 햄버거 클릭시 펼쳐지는 메뉴
+.lnb_wrap {
+    $w-lnb: 300px;
+    $transition: all 0.3s ease-in-out;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s;
+    z-index: 999;
+
+    .btn_lnb {
+        position: absolute;
+        top: 13px;
+        right: 8px;
+        width: 38px;
+        height: 38px;
+        background: url($img-path-common + 'btn_lnb_open.png') no-repeat center / 22px auto;
+        transition: $transition;
+        z-index: 1;
+
+        &.bk {
+            background-image: url($img-path-common + 'btn_lnb_open_bk.png');
+        }
+    }
+
+    .inner {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 100%;
+        background-color: $white;
+        overflow: hidden;
+        transition: $transition;
+    }
+
+    .lnb {
+        width: $w-lnb;
+
+        @include media(ss) {
+            width: 233px;
+        }
+
+        h1 {
+            padding: 30px 20px;
+            background-color: $c-point;
+            text-align: right;
+
+            .logo {
+                display: inline-block;
+                width: 100px;
+                height: 46px;
+                background: url($img-path-common + 'logo_lnb.png') no-repeat center / 100px auto;
+                vertical-align: middle;
+            }
+        }
+
+        nav {
+            padding: 14px 0;
+            background-color: $white;
+            text-align: right;
+            letter-spacing: -0.41px;
+
+            a {
+                display: block;
+                padding: 17px 25px;
+                font-size: 18px;
+                color: #555;
+                line-height: 1;
+
+                &:hover,
+                &:focus {
+                    color: #aaa;
+                }
+
+                &.active {
+                    color: $c-point;
+                }
+            }
+        }
+    }
+
+    &.active {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        .btn_lnb {
+            right: 250px;
+            background: url($img-path-common + 'btn_lnb_close.png') no-repeat center / 15px auto;
+
+            @include media(ss) {
+                right: 180px;
+            }
+        }
+
+        .inner {
+            width: $w-lnb;
+
+            @include media(ss) {
+                width: 233px;
+            }
+        }
+    }
+
+    @at-root .app & {
+        display: none;
+    }
+}

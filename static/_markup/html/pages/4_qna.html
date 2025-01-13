@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    @@include('common/head.html')
+</head>
+
+<body>
+<div id="gnb"></div>
+@@include('common/lnb.html')
+
+<div class="wrap">
+    <div id="container" class="ct_qna">
+        @@include('common/header.html', { tab4: 'active' })
+
+        <div id="contents" class="common_wrap">
+            <div class="list_wrap">
+                <div class="list">
+                    <h4 class="title">일반</h4>
+                    
+                    @@loop('components/qna.html', [
+                        { q: '질문이 들어가는 영역입니다 질문이 들어가는 영역입니다 질문이 들어가는 영역입니다', a: '<br>질문에 대한 내용이 들어가는 영역입니다<br>질문에 대한 내용이 들어가는 영역입니다 <br>질문에 대한 내용이 들어가는 영역입니다' },
+                        { q: '1111', a: 'aaa111' },
+                        { q: '222', a: 'aaa222' },
+                        { q: '333', a: 'aaa333' },
+                        { q: '444', a: 'aaa444' },
+                        { q: '555', a: 'aaa555' },
+                        { q: '666', a: 'aa66666' }
+                    ])
+                </div>
+
+                <div class="list">
+                    <h4 class="title">보장</h4>
+
+                    @@loop('components/qna.html', [
+                        { q: '질문', a: '<br>질문에 대한 내용이 들어가는 영역입니다<br>질문에 대한 내용이 들어가는 영역입니다 <br>질문에 대한 내용이 들어가는 영역입니다' },
+                        { q: '1111', a: 'aaa111' }
+                    ])
+                </div>
+
+                <div class="list">
+                    <button type="button" class="title btn_slider">
+                        COVID-19 격리비/항공료보장 관련
+                        <span class="c__red">(8/26 18:00 가입신청마감)</span>
+                    </button>
+
+                    <div class="togglee">
+                        @@loop('components/qna.html', [
+                            { q: '질문이 들어가는 영역입니다 질문이 들어가는 영역입니다 질문이 들어가는 영역입니다', a: '<br>질문에 대한 내용이 들어가는 영역입니다<br>질문에 대한 내용이 들어가는 영역입니다 <br>질문에 대한 내용이 들어가는 영역입니다' },
+                            { q: '1111', a: 'aaa111' },
+                            { q: '222', a: 'aaa222' },
+                            { q: '333', a: 'aaa333' },
+                            { q: '444', a: 'aaa444' },
+                            { q: '555', a: 'aaa555' },
+                            { q: '666', a: 'aa66666' }
+                        ])
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn_wrap">
+                <a href="#" class="mi_btn white type2">보험약관</a>
+                <a href="#" class="mi_btn white type2">서비스약관</a>
+                <button type="button" class="mi_btn white type2">이메일로 약관받기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer"></div>
+
+@@include('common/js.html')
+
+</body>
+</html>

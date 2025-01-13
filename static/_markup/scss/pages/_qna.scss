@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+.ct_qna {
+    .list {
+        margin-top: 32px;
+    }
+
+    .title {
+        @include set-font(18px, $dark);
+        margin-bottom: 10px;
+        font-weight: bold;
+
+        .c__red {
+            display: block;
+            font-size: $default-font-size;
+            //font-weight: normal;
+        }
+    }
+
+    .qna {
+        position: relative;
+        border-top: 1px solid #e6e6e6;
+        font-size: 15px;
+        color: #333;
+        counter-increment: index-qna;
+
+        &:last-child {
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        &::before {
+            content: counter(index-qna) ".";
+            position: absolute;
+            top: 13px;
+            left: 5px;
+            color: $c-point;
+        }
+
+        @for $i from 1 to 10 {
+            &:nth-of-type(#{$i}):before {
+                content: "0" counter(index-qna) ".";
+            }
+        }
+
+        .btn_slider {
+            padding: 13px 23px 13px 33px;
+        }
+
+        .togglee {
+            padding: 20px 20px 25px 20px;
+            background-color: $c-bg-box;
+            line-height: 24px;
+        }
+    }
+
+    .btn_slider {
+        position: relative;
+        width: 100%;
+        text-align: left;
+
+        &::after {
+            @include arrow-down(4px, 2px, $dark);
+            content: "";
+            position: absolute;
+            top: 18px;
+            right: 5px;
+        }
+
+        &.open {
+            &::after {
+                top: 21px;
+                transform: rotate(225deg);
+            }
+
+            & + .togglee {
+                position: relative;
+                //margin-bottom: -1px;
+                z-index: 1;
+            }
+        }
+    }
+
+    .togglee {
+        display: none;
+    }
+
+    .btn_wrap {
+        margin-top: 40px;
+    }
+
+    .list1 {
+        li {
+            @include text-indent(-12px);
+
+            & + li {
+                margin-top: 6px;
+            }
+        }
+    }
+
+    .list2 {
+        li {
+            @include text-indent(-20px);
+
+            & + li {
+                margin-top: 24px;
+            }
+        }
+
+        p {
+            @include text-indent(-10px);
+        }
+    }
+}

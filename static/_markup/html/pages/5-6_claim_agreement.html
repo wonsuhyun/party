@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    @@include('common/head.html')
+</head>
+
+<body class="desktop">
+<div id="gnb"></div>
+@@include('common/lnb.html')
+
+<div class="wrap">
+    <div id="container" class="ct_claim_agreement">
+        @@include('common/header_title.html')
+        <div class="contents_step with_title no_tab">
+            <a href="/" class="btn_prev common_wrap">이전</a>보상간편청구
+        </div>
+        @@include('common/contents_step_claim.html',{ step: 'step5' })
+
+        <div id="contents">
+            <div class="common_wrap">
+                <h4 class="part_title"><strong>서명하기</strong> <button class="btn_reset" disabled>지우기</button></h4>
+                <div>
+                    <div id="signaturePad"><canvas id="canvas1" height="220"></canvas></div>
+                </div>
+            </div>
+
+            <div class="common_wrap">
+                <div class="btn_wrap">
+                    <button class="mi_btn color submit" disabled>확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer"></div>
+
+@@include('common/js.html');
+<script>
+    // signPopOpenAc(); <div className="con-box" id="signaturePad"><canvas id="canvas1"></canvas></div>
+
+    signPopOpenAc();
+    function signPopOpenAc(){
+        var tarPopResetBt = $('.btn_reset'); // 서명받기 팝업 리셋 버튼
+        var tarPopOkBt =$('.submit'); // 서명받기 팝업 확인 버튼
+
+        // STR signature_pad-master
+        var wrapper = document.getElementById("signaturePad");
+        var canvas = wrapper.querySelector("canvas");
+
+        canvas.setAttribute("width", $('#signaturePad').innerWidth());
+
+        var signaturePad = new SignaturePad(canvas, {
+            backgroundColor: 'rgba(255, 255, 255,0)',
+            onBegin : function(){
+                $('.submit').prop('disabled',false);
+                tarPopResetBt.prop('disabled',false);
+            }
+        });
+
+
+
+        var elCanvas = document.getElementById("canvas1")
+        var ctx = elCanvas.getContext("2d");
+
+        tarPopResetBt.on('click',function(){ // 서명받기 팝업 리셋 버튼
+            signaturePad.clear();
+            $('.submit').prop('disabled',true);
+            tarPopResetBt.prop('disabled',true);
+        });
+
+        tarPopOkBt.on('click',function(){ // 서명받기 팝업 확인 버튼
+            if (signaturePad.isEmpty()) { // 서명이 없을때
+                miCommonPop.setting({
+                    dCopy : "서명을 완료해주세요",
+                    dCopyAlign: 't__center',
+                    dClass: "vertical_pop"
+                })
+            } else { // 서명이 있을때
+                $(this).prop("disabled",true);
+                $(this).addClass("on");
+                var dataURL = signaturePad.toDataURL() // 이미지 src
+                fnSendPostAjax('/api/confirm-sign',{sign : dataURL},{
+                    s: function(){
+                        $(this).removeClass("on");
+                        $(this).attr("disabled",false);
+                        location.reload();
+                    }
+                });
+            }
+        });
+    }
+</script>
+</body>
+</html>

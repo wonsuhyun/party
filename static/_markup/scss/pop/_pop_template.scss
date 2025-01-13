@@ -1,0 +1,267 @@
+@charset "UTF-8";
+
+.mi_common_pop {
+    &.basic {
+        .pop_title {
+            margin: 0 10px;
+            padding: 18px 0 13px;
+            border-bottom: 1px solid $dark;
+        }
+
+        .pop_body {
+            .pop_title {
+                margin: 0;
+            }
+        }
+
+        .pop_contents {
+            padding-top: 20px;
+        }
+    }
+
+    &.alert {
+        .btn_close {
+            top: 0;
+
+            & + .pop_contents {
+                padding-top: 40px;
+            }
+        }
+    }
+
+    &.info {
+        .pop_title {
+            padding: 25px 10px 10px;
+            font-size: 16px;
+            font-weight: normal;
+
+            &.no_padding {
+                padding-top: 0;
+            }
+        }
+
+        .pop_contents {
+            @include set-font(15px, #777);
+            padding: 0 10px 10px;
+            text-align: left;
+
+            .pop_title {
+                padding: {
+                    left: 0;
+                    right: 0
+                };
+            }
+        }
+
+        .indent {
+            padding-left: 15px;
+            & + .indent {
+                margin-top: 10px;
+            }
+        }
+
+        .sm {
+            font-size: 14px;
+        }
+
+        .pop_bottom {
+            padding: 0;
+            .mi_btn {
+                background-color: $c-bg-box;
+                border-color: $c-bg-box;
+                color: $c-point;
+                font-size: 15px;
+            }
+        }
+    }
+
+    &.form {
+        .pop_title {
+            padding: 18px 20px 20px
+        }
+
+        .pop_body,
+        .pop_bottom {
+            background: #f9f9f9;
+        }
+
+        .pop_contents {
+            padding: {
+                left: 10px;
+                right: 10px
+            }
+        }
+
+        .input_label {
+            width: 23%;
+            min-width: 80px;
+        }
+    }
+
+    &.datepicker {
+        .pop_wrap {
+            max-width: 335px;
+            padding-bottom: 0;
+            border-radius: 7px;
+            overflow: hidden;
+        }
+
+        .pop_body {
+            padding-bottom: 0;
+        }
+
+        .btn_close {
+            top: 2px
+        }
+
+        .pop_title {
+            @include set-font(16px, #0b1a5a);
+            margin: 0;
+            padding: 15px 20px 20px;
+            background: #ecf0fa;
+        }
+
+        .pop_contents {
+            padding: 20px 0;
+        }
+    }
+
+    &.select {
+        .pop_wrap {
+            padding-bottom: 20px;
+            border-radius: 7px;
+        }
+
+        .pop_title {
+            height: 40px
+        }
+
+        .pop_body {
+            padding: 0;
+
+            @at-root .desktop & {
+                max-height: 600px;
+            }
+        }
+
+        .pop_contents {
+            padding: 0 20px;
+        }
+
+        .select_title {
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: $dark
+        }
+
+        .check_group {
+            .text {
+                font-size: 15px;
+            }
+
+            & + .check_group {
+                margin-top: 18px;
+                padding-top: 18px;
+                border-top: 1px solid #ddd;
+            }
+        }
+
+        &.type2 {
+            .pop_contents {
+                padding: 0;
+            }
+
+            .select_title {
+                padding: 0 20px;
+            }
+
+            .mi_check {
+                padding: {
+                    left: 30px;
+                    right: 18px
+                }
+            }
+        }
+    }
+
+    &.bottom {
+        $h-pop_title: 75px;
+        $h-pop_bottom: 85px;
+        $h-half_tab: $h-header-tab * 2;
+
+        padding: 0;
+
+        @at-root .mobile & {
+            .pop_wrap {
+                top: initial !important;
+                bottom: 0;
+                padding-bottom: $h-pop_bottom;
+                border-radius: 16px 16px 0 0;
+                overflow: hidden;
+                animation: slideUp 300ms ease-out;
+            }
+
+            .pop_body {
+                padding: 0 30px;
+            }
+
+            .pop_title {
+                padding-top: 30px;
+                padding-bottom: 15px;
+                padding-left: 20px;
+                color: $dark;
+                & ~ .pop_contents {
+                    padding-top: 15px;
+                }
+                & ~ .pop_body {
+                    max-height: calc(95vh - #{$h-header-title + $h-half_tab + $h-pop_bottom});
+                }
+            }
+
+            .btn_close {
+                top: 0;
+                width: 46px;
+                height: 46px;
+            }
+
+            .pop_contents {
+                padding: 15px 0
+            }
+
+            .pop_bottom {
+                padding: 10px 20px 30px;
+            }
+        }
+
+        @at-root .app & {
+            $h-pop_bottom : 115px;
+
+            .pop_wrap {
+                padding-bottom: $h-pop_bottom;
+            }
+            .pop_title {
+                & ~ .pop_body {
+                    max-height: calc(95vh - #{$h-header-title + $h-pop_bottom + $h-half_tab});
+                }
+            }
+
+            .pop_bottom {
+                padding: 10px 20px 60px;
+            }
+        }
+        .pop_title {
+            padding-bottom: 10px;
+        }
+        .pop_bottom {
+            &.shadow_up {
+                box-shadow: 0 -3px 6px 0 rgba(0, 0, 0, 0.16);
+            }
+        }
+        .pop_body {
+            max-height: calc(100vh - #{$h-header-title + $h-half_tab + $h-pop_bottom});
+            @at-root .app & {
+                max-height: calc(100vh - #{$h-half_tab + $h-half_tab +  $h-pop_bottom});
+            }
+        }
+    }
+}

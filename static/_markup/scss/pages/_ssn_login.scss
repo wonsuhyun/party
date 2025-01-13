@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+.ct_ssn_login {
+    .common_wrap {
+        padding-top: 100px;
+    }
+
+    .title {
+        @include set-font(18px, #333);
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .input_wrap {
+        width: 260px;
+        margin: 0 auto;
+    }
+
+    .mi_input {
+        text-align: center;
+    }
+
+    .mi_btn {
+        margin-top: 20px;
+    }
+}

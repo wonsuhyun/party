@@ -1,0 +1,123 @@
+<!-- TODO 보장금액이 0이면 해당 <li>에 el_hidden 클래스 추가, 모든 항목이 0이면 <div.cvrg_group>에 el_hidden 클래스 추가 -->
+<div class="cvrg_group">
+    <h5>해외의료비</h5>
+
+    <ul class="mt_10">
+        <li class="c__blue">
+            <span>질병 <em class="block added c__red">(코로나19 보장 포함)</em></span>
+
+            <div class="input_box">
+                <select class="mi_input select" dir="rtl">
+                    @@for (var i = 2; i >= 1; i--) {
+                    <option>US `+ i +`만달러</option>
+                    }
+                </select>
+            </div>
+        </li>
+        <li>
+            상해
+
+            <div class="input_box">
+                <select class="mi_input select" dir="rtl">
+                    @@for (var i = 2; i >= 1; i--) {
+                    <option>US `+ i +`만달러</option>
+                    }
+                </select>
+            </div>
+        </li>
+        <li class="mt_12">
+            긴급구조/송환
+            <button type="button" class="btn_qmark"><span class="t__hidden">보장 안내</span></button>
+            <div class="price">US 3만달러</div>
+        </li>
+    </ul>
+</div>
+
+<div class="cvrg_group">
+    <h5>빈번한사고 보장</h5>
+
+    <ul>
+        <li class="c__blue">
+            <span>항공기 지연/결항 <em class="added">(4시간)</em><br>항공위탁수하물 지연도착 <em class="added">(6시간)</em></span>
+            <button type="button" class="btn_qmark"><span class="t__hidden">보장 안내</span></button>
+            <div class="price">30만원</div>
+        </li>
+        <li class="mt_10">
+            <span><em class="c__blue">항공위탁수하물 파손/도난/분실</em><br>휴대물품 파손/도난</span>
+            <button type="button" class="btn_qmark btn_info" data-index="p3"><span class="t__hidden">보장 안내</span></button>
+            <div class="price c__blue">50만원</div>
+        </li>
+        <li class="mt_10">
+            배상책임
+            <button type="button" class="btn_qmark"><span class="t__hidden">보장 안내</span></button>
+            <div class="price">3,000만원</div>
+        </li>
+    </ul>
+</div>
+
+<div class="cvrg_group under15">
+    <h5 class="f__box">
+        상해사고 후유장해
+
+        <div class="input_box">
+            <select class="mi_input select" dir="rtl">
+                @@for (var i = 3; i >= 1; i--) {
+                <option>`+ i +`억원</option>
+                }
+            </select>
+        </div>
+    </h5>
+</div>
+
+<div class="cvrg_group over15">
+    <h5>사망보장</h5>
+
+    <ul class="mt_10">
+        <li>
+            상해사망/후유장해
+
+            <div class="input_box">
+                <select class="mi_input select" dir="rtl">
+                    @@for (var i = 2; i >= 1; i--) {
+                    <option>`+ i +`억원</option>
+                    }
+                </select>
+            </div>
+        </li>
+        <li class="mt_12">
+            질병사망/고도후유장해
+            <div class="price">5,000만원</div>
+        </li>
+    </ul>
+</div>
+
+<div class="cvrg_group">
+    <h5>기타보장</h5>
+
+    <ul>
+        <li>
+            긴급귀국
+            <button type="button" class="btn_qmark"><span class="t__hidden">보장 안내</span></button>
+            <div class="price">30만원</div>
+        </li>
+        <li>
+            특정전염병치료 위로금
+            <button type="button" class="btn_qmark"><span class="t__hidden">보장 안내</span></button>
+            <div class="price">30만원</div>
+        </li>
+        <li>
+            식중독입원 위로금
+            <button type="button" class="btn_qmark"><span class="t__hidden">보장 안내</span></button>
+            <div class="price">30만원</div>
+        </li>
+        <li>
+            여권분실
+            <button type="button" class="btn_qmark"><span class="t__hidden">보장 안내</span></button>
+            <div class="price">6만원</div>
+        </li>
+        <li>
+            항공기납치
+            <div class="price">140만원</div>
+        </li>
+    </ul>
+</div>

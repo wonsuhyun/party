@@ -1,0 +1,48 @@
+.ct_claim_medical {
+    .noti_box {
+        border-radius: 4px;
+        padding: 20px;
+        background: #f4f7fb;
+        font-size: 13px;
+        display: block;
+        margin-top: 5px;
+    }
+
+    #contents {
+        padding-top: 30px;
+    }
+
+    .btn_wrap {
+        margin-top: 40px;
+    }
+
+    .add_accident {
+        padding-left: 10px;
+    }
+
+    .input_box.check_group {
+        padding-left: 2px;
+    }
+
+    .add_accident {
+        margin-top: 2px;
+    }
+
+    .tooltip {
+        position: relative;
+
+        &.tooltip_hide::after{
+            display: none;
+        }
+
+        &:after{
+            content: "";
+            width: 16px;
+            position: absolute;
+            bottom: -6px;
+            left: 13px;
+            height: 8px;
+            background: url( $img-path + "tooltip_arrow.png") no-repeat center/ contain;
+        }
+    }
+}

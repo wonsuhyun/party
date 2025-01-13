@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+.ct_simple_quote {
+    &.modify {
+        .header_tab,
+        .estm_summary,
+        .apply_only {
+            display: none;
+        }
+
+        .estimate_wrap {
+            padding-top: 40px;
+        }
+
+        .mod_heading {
+            display: block;
+        }
+
+        .mod_noti {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        .plan_wrap {
+            margin-top: 10px;
+        }
+
+        .plan_tab {
+            @at-root .mobile & {
+                top: $h-header-title
+            }
+
+            @at-root .app & {
+                top: 0
+            }
+        }
+    }
+
+    .mod_heading {
+        display: none;
+    }
+
+    .travel_info {
+        padding-top: 30px;
+        padding-bottom: 20px;
+
+        .mi_input::placeholder {
+            color: $dark;
+        }
+
+        .with_noti {
+            position: relative;
+            padding-bottom: 30px;
+        }
+
+        .input_noti {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 250px;
+            text-align: right;
+        }
+
+        .btn_qmark {
+            height: 22px;
+            margin-top: 35px;
+            border-bottom: 1px solid $c-point;
+            color: $c-point;
+            line-height: 21px;
+            @include add-ico(btn_qmark_blue, before, 15px, 5px)
+        }
+    }
+
+    .noti {
+        margin-top: 28px;
+        color: #777;
+        text-align: center;
+
+        ul {
+            margin-top: 18px;
+            font-size: 14px;
+        }
+
+        li {
+            padding: 7px 0;
+        }
+
+        .t__bg_line {
+            @include text-bg-line(8px, #fdf2f2);
+            font-size: 16px;
+        }
+    }
+
+    .estm_summary {
+        @include set-font(16px, $dark);
+        margin-top: 60px;
+        padding: 20px 0;
+        border: 1px solid $c-border-default;
+        border-radius: 4px;
+    }
+
+    .plan_tab {
+        position: sticky;
+        top: 100px;
+        padding-top: 20px;
+        background-color: $white;
+        z-index: 2;
+
+        @at-root .mobile & {
+            top: $h-header-title + $h-header-tab
+        }
+
+        @at-root .app & {
+            top: $h-header-tab
+        }
+
+        .mi_check {
+            flex-grow: 0.42;
+
+            &.checked {
+                flex-grow: 0.58;
+
+                .text {
+                    @include set-font(15px, $c-point);
+                    font-weight: bold;
+                }
+
+                .premium {
+                    @include set-font(18px, $dark)
+                }
+            }
+        }
+
+        .text {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .premium {
+            margin-top: 3px;
+            color: #555
+        }
+    }
+
+    .plan {
+        border: 1px solid $c-point;
+        border-top: none;
+        border-radius: 0 0 4px 4px;
+    }
+
+    .mi_button,
+    .btn_wrap {
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "mi.travels",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://git.mibank.xyz/mi.java.framework/mi.travels.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.27.10",
+    "bufferutil": "^4.0.6",
+    "del": "^6.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-file-include": "^2.3.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "sass": "^1.54.0",
+    "utf-8-validate": "^5.0.9"
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    @@include('common/head.html')
+</head>
+
+<body>
+<div id="gnb"></div>
+@@include('common/lnb.html')
+
+<div class="wrap">
+    <div id="container" class="ct_payment_complete apply bottom_fix">
+        @@include('common/header.html', { tab2: 'active' })
+
+        <div id="contents" class="common_wrap">
+            <h3 class="icon_box success">가입이 완료되었습니다</h3>
+
+<!--            <div class="noti">보험가입증명서는 <span class="c__point">selina.s@mibank.me</span>로 보내드렸습니다</div>-->
+            <div class="noti">
+                <span class="c__point">[[${email}]]</span>로
+                가입증명서를 보내드렸습니다<br>
+                동반가입자가 가입내용을 확인할 수 있도록<br>
+                카카오톡을 보내주세요
+            </div>
+
+
+            <div class="fix_wrap common_wrap">
+                <div class="coupon_wrap">
+                    <a href="#" class="coupon_noti">
+                        <strong class="c__blue">보험료 10% 할인쿠폰과</strong><br><strong class="c__golf">홀인원보험 초대장</strong>이 발급되었습니다
+                    </a>
+                </div>
+                <!-- 디자인 미정이라 넣어만둠 -->
+                <a href="#" class="mi_btn color">동반가입자에게 카카오톡 보내기</a>
+                <a href="#" class="mi_btn white">마이페이지로 이동하기</a>
+<!--                <a href="#" class="mi_btn color">마이페이지로 이동하기</a>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer"></div>
+
+@@include('common/js.html')
+</body>
+</html>
