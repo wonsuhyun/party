@@ -16,9 +16,9 @@
 <meta property="og:site_name" content="">
 <meta property="og:description" content="">
 
-<link rel="stylesheet" href="/css/reset.css">
-<link rel="stylesheet" href="/css/style.css">
-<script src="/js/lib/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/lib/jquery-3.4.1.min.js"></script>
 <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
 </head>
 <body>
@@ -33,24 +33,55 @@
         </div>
     </div>
     <div class="wrap">
-        <div id="container">
-            <div class="common_wrap" id="gallery">
+        <div class="container">
+            <div class="common_wrap gallery" id="gallery">
                 <div class="row">
-                    <div class="img_wrap"></div>
-                    <div class="img_wrap"></div>
+                    <div class="img_wrap">img</div>
+                    <div class="img_wrap">img</div>
                 </div>
                 <div class="row">
-                    <div class="img_wrap"></div>
-                    <div class="img_wrap"></div>
+                    <div class="img_wrap">img</div>
+                    <div class="img_wrap">img</div>
                 </div>
                 <div class="row">
-                    <div class="img_wrap"></div>
-                    <div class="img_wrap"></div>
+                    <div class="img_wrap">img</div>
+                    <div class="img_wrap">img</div>
                 </div>
             </div>
-            <div class="common_wrap" id="qna">
+            <div class="common_wrap qna" id="qna">
                 <div class="reservation">
+                    <p class="part_title">Q&A</p>
                     <ul class="list_type">
+                        <li>
+                            <button class="toggle_btn">test1</button>
+                            <div class="toggle_conts">
+                                test1
+                            </div>
+                        </li>
+                        <li>
+                            <button class="toggle_btn">test1</button>
+                            <div class="toggle_conts">
+                                test1
+                            </div>
+                        </li>
+                        <li>
+                            <button class="toggle_btn">test1</button>
+                            <div class="toggle_conts">
+                                test1
+                            </div>
+                        </li>
+                        <li>
+                            <button class="toggle_btn">test1</button>
+                            <div class="toggle_conts">
+                                test1
+                            </div>
+                        </li>
+                        <li>
+                            <button class="toggle_btn">test1</button>
+                            <div class="toggle_conts">
+                                test1
+                            </div>
+                        </li>
                         <li>
                             <button class="toggle_btn">test1</button>
                             <div class="toggle_conts">
@@ -62,7 +93,11 @@
             </div>
             <div class="common_wrap" id="calendar">
                 <div id='calendar'></div>
-                <div class="reservation">
+            </div>
+
+            <div class="common_wrap">
+                <p class="part_title">Reservation</p>
+                <div class="">
                     <ul class="list_type">
                         <li>
                             <button class="toggle_btn">test1</button>
@@ -89,6 +124,10 @@
                             </div>
                         </li>
                     </ul>
+
+                    <div class="btn_wrap">
+                        <button class="custom_btn">글쓰기</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -109,4 +148,8 @@
         });
         calendar.render();
       });
+
+      $('.toggle_btn').on('click', function(){
+        $(this).siblings('.toggle_conts').slideToggle(200)
+      })
 </script>
