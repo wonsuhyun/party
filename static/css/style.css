@@ -1,0 +1,39 @@
+.common_wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.container {
+    padding-top: 50px;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.header .common_wrap{
+    overflow: hidden;
+}
+
+.header  .logo {
+    float: left;
+}
+.header ul {
+    float: right;
+}
+
+.heaer  li {
+    display: inline-block;
+}
+
+.footer{
+    height: 100px;
+    background: #aaaaaa;
+}
+
+.gallery {
+    
+}
+

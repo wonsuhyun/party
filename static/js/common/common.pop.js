@@ -6,26 +6,26 @@ edit : Jinn
 lase edit : 2020-01-21 info 타입 추가
 */
 
-var miCommonPop = new function () {
+var modulPop = new function () {
     this.set = function (options) {
         var defaults = {
-            dWidth: null, // pop width
-            dConHe: null, // pop con height
-            dType: 'basic', // basic, alert, confirm, info 타입설정
-            dClass: '', // class 설정 커스텀 가능
-            dTarget: 'popDefault', // 타겟 설정 id 설정 // 마크업된 팝업이 있을경우 // 멀티팝업의 경우
-            dTitle: null, // 타이틀
-            dTitleAlign: 't__left', // 타이틀 정렬
-            dCopy: null, // 카피라이트
-            dCopyAlign: 't__left', // 카피라이트 정렬
-            dOpenAc: null, // 오픈콜백
-            dCloseAc: null, // .btn_close 콜백
-            dFirstAc: null, // .btn_first 콜백
-            dLastAc: null, // .btn_last 콜백
+            dWidth: null,
+            dConHe: null, 
+            dType: 'basic', 
+            dClass: '', 
+            dTarget: 'popDefault', 
+            dTitle: null, 
+            dTitleAlign: 't__left', 
+            dCopy: null,
+            dCopyAlign: 't__left',
+            dOpenAc: null,
+            dCloseAc: null, 
+            dFirstAc: null, 
+            dLastAc: null, 
             dButtonText: '확인',
-            dButtonSet: false, // 팝업 버튼 셋팅 커스텀 가능
-            dButtonSetText: ['아니요', '예'], // 기본값 ['아니요','예'] // 팝업 버튼 셋팅 커스텀 가능
-            dCloseX: false, // 팝업 x 버튼
+            dButtonSet: false, 
+            dButtonSetText: ['아니요', '예'], 
+            dCloseX: false, 
             dShowTime: null
         };
 
