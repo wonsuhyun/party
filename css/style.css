@@ -1,11 +1,27 @@
 .common_wrap {
     max-width: 800px;
     padding-top: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin: 0 auto;
 }
 
 .img_wrap {
     margin-bottom: 30px;
+}
+
+.section > p {
+    font-size: 18px;
+}
+
+.section + .section {
+    margin-bottom: 50px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 50px;
 }
 
 li + li {
